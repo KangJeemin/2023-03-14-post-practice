@@ -2,7 +2,7 @@
 const http = require('http');
 const formTag = `
 <form method="POST" action="/login">
-<input type="text" name="id">
+<input type="text" name="ids">
 <input type="submit">
 </form>
 `;
@@ -39,7 +39,7 @@ response.end();
 
 // 무언가
 if(request.method === 'POST' && request.url.startsWith('/login')) {
-let jimin ;
+let jimin='' ;
 request.on('data',(chunck)=>{
     jimin += chunck
 });
