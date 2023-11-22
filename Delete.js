@@ -1,7 +1,7 @@
 
 const http = require('http');
 const formTag = `
-<form method="DELETE" action="/login">
+<form method="GET" action="/login">
 <input type="text" name="id">
 <input type="submit">
 </form>
@@ -34,21 +34,20 @@ response.end();
 }
 
 // 무언가
-if(request.method === 'DELETE' && request.url.startsWith('/login')) {
+if(request.method === 'GET' && request.url.startsWith('/login')) {
 // let jimin='' ;
 // console.log(request.method)
 // request.on('data',(chunck)=>{
 //     jimin += chunck
 // });
 
-request.on('end',()=>{
+
 response.writeHead(200, {'Content-Type': 'text/html'});
 const name = request.url.split('=')[1];
 let page = firstPage(name);
 response.write(page);
 response.end();
 
-})
 }
 });
 
