@@ -1,0 +1,19 @@
+{
+  "name": "2023-03-14-post-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KangJeemin/2023-03-14-post-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KangJeemin/2023-03-14-post-practice/issues"
+  },
+  "homepage": "https://github.com/KangJeemin/2023-03-14-post-practice#readme"
+}
