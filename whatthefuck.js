@@ -1,7 +1,7 @@
 
 const http = require('http');
 const formTag = `
-<form method="GET" action="/login">
+<form method="POST" action="/login">
 <input type="text" name="id">
 <input type="submit">
 </form>
@@ -38,14 +38,19 @@ response.end();
 }
 
 // 무언가
-if(request.method === 'GET' && request.url.startsWith('/login')) {
-console.log(request.url);
-const name = request.url.split('=')[1];
-response.writeHead(200, {'Content-Type': 'text/html'});
-let page = firstPage(name)
-response.write(page);
+if(request.method === 'POST' && request.url.startsWith('/login')) {
+let jimin ;
+request.on('data',(chunck)=>{
+    jimin += chunck
+});
 
+request.on('end',()=>{
+response.writeHead(200, {'Content-Type': 'text/html'});
+let page = firstPage(jimin)
+response.write(page);
 response.end();
+
+})
 }
 });
 
